@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencari Rute Terpendek - Sulsel</title>
+    
+    <!-- CSS (Gaya Tampilan Pink & Putih) -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff80ab 0%, #ffffff 50%, #f8bbd0 100%);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(255, 128, 171, 0.25);
+            max-width: 500px;
+            width: 100%;
+            border-top: 6px solid #ec407a;
+            border-bottom: 6px solid #f48fb1;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #d81b60;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .team-box {
+            background-color: #fce4ec;
+            border: 1px dashed #f48fb1;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: #880e4f;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .team-title {
+            font-weight: bold;
+            color: #d81b60;
+            margin-bottom: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #c2185b;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #f8bbd0;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+            background-color: #fff;
+        }
+
+        select:focus {
+            border-color: #ec407a;
+            box-shadow: 0 0 6px rgba(236, 64, 122, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ec407a;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #d81b60;
+        }
+
+        .result-box {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fce4ec;
+            border-left: 5px solid #ec407a;
+            display: none;
+        }
+
+        .result-box.error {
+            background-color: #ffebee;
+            border-left-color: #c62828;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pencari Rute Terpendek</h1>
+        <div class="subtitle">Program Penentuan Rute Perjalanan (Algoritma Dijkstra)</div>
+
+        <!-- Kotak Nama Anggota -->
+        <div class="team-box">
+            <div class="team-title">Kelompok Penyusun</div>
+            Siti N. I. &bull; Restu A. &bull; Reva A. M. &bull; Nanda P. A.
+        </div>
+        
+        <div class="form-group">
+            <label for="kotaAwal">Lokasi Awal:</label>
+            <select id="kotaAwal">
+                <option value="">-- Pilih Lokasi Awal --</option>
+                <option value="Makassar">Makassar</option>
+                <option value="Gowa">Gowa</option>
+                <option value="Takalar">Takalar</option>
+                <option value="Jeneponto">Jeneponto</option>
+                <option value="Bantaeng">Bantaeng</option>
+                <option value="Bulukumba">Bulukumba</option>
+                <option value="Sinjai">Sinjai</option>
+                <option value="Bone">Bone</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="kotaTujuan">Lokasi Tujuan:</label>
+            <select id="kotaTujuan">
+                <option value="">-- Pilih Lokasi Tujuan --</option>
+                <option value="Makassar">Makassar</option>
+                <option value="Gowa">Gowa</option>
+                <option value="Takalar">Takalar</option>
+                <option value="Jeneponto">Jeneponto</option>
+                <option value="Banta
